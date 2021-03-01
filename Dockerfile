@@ -34,7 +34,7 @@ RUN printf "http://mirror.leaseweb.com/alpine/v3.7/main\nhttp://mirror.leaseweb.
     rm -rf /var/cache/apk/*
 
 # Copy build
-COPY jumpgate jumpgate
+COPY --from=build /jumpgate /jumpgate
 
 ENV LISTEN_HOST ":8000"
 EXPOSE 8000
